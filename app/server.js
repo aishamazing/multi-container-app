@@ -8,9 +8,9 @@ const moment = require('moment');
 // Live Reload configuration
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
-    setTimeout(() => {
-        liveReloadServer.refresh("/");
-    }, 100);
+ setTimeout(() => {
+  liveReloadServer.refresh("/");
+ }, 100);
 });
 
 // Fontend route
@@ -27,9 +27,9 @@ app.locals.moment = moment;
 // Database connection
 const db = require('./config/keys').mongoProdURI;
 mongoose
-    .connect(db, { useNewUrlParser: true })
-    .then(() => console.log(`Mongodb Connected`))
-    .catch(error => console.log(error));
+ .connect(db, { useNewUrlParser: true })
+ .then(() => console.log(`Mongodb Connected`))
+ .catch(error => console.log(error));
 
 
 app.use(FrontRouter);
@@ -37,5 +37,5 @@ app.use(FrontRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+ console.log(`Server listening on port ${PORT}`);
 });
